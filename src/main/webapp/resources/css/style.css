@@ -1,0 +1,345 @@
+@import url('https://fonts.googleapis.com/css2?family=Fleur+De+Leah&display=swap');
+
+.bg-green {
+  background-color: #17661830;
+}
+
+.bg-palegoldenrod {
+  background-color: palegoldenrod;
+}
+
+.color-limegreen {
+  color: limegreen;
+}
+
+header {
+  background-color: white;
+}
+
+.nav-link::hover {
+  color: lightgreen;
+}
+
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: lightgray;
+  opacity: 1; /* Firefox */
+}
+
+/* START *** BUTTONS, LINKS *** */
+.bg-darkseagreen {
+  background-color: darkseagreen;
+  color: darkgreen;
+}
+
+.bg-darkseagreen:hover {
+  background-color: darkolivegreen;
+  color: white;
+}
+/* END *** BUTTONS, LINKS *** */
+
+/* *** navigation.jsp, user-medicinal-plants.jsp MEDICINAL PLANTS CARD BG *** */
+#userMedicinalPlants .thumbnail-container {
+  background-color: white;
+}
+
+/* START *** searched.jsp, user-medicinal-plants.jsp, index.jsp
+ICONS REMOVE / ADD TO FAVORITES LIST OF MEDICINAL PLANTS *** */
+.catalog-item .leaves-heart-icon {
+  background-image: url(../images/leaves-heart.png); /*https://www.flaticon.com/free-icon/love_6503728*/
+  background-size: contain;
+  background-position: left;
+  background-repeat: no-repeat;
+}
+
+.catalog-item .heart-minus-icon {
+  background-image: url(../images/heart-minus.png); /*https://www.flaticon.com/free-icon/heart_6774211*/
+  background-size: contain;
+  background-position: left;
+  background-repeat: no-repeat;
+}
+/* END *** searched.jsp, user-medicinal-plants.jsp, index.jsp
+ICONS REMOVE / ADD TO FAVORITES LIST OF MEDICINAL PLANTS *** */
+
+
+/* START ### medicinal-plant.jsp #######################################################################*/
+/* *** BUTTON TO EXPAND LINKS TO SOURCES OF MEDICINAL PLANTS DATA *** */
+.data-source-link {
+  font-size: 12px;
+}
+
+/* *** TITLE OF THE DISPLAYED CATEGORY *** */
+.color-darkgreen-bold {
+  font-weight: bold;
+  color: darkgreen;
+  font-size: 18px;
+}
+
+/* *** BUTTON REMOVE FAVOURITE MEDICAL PLANT *** */
+.icon-remove-favourite:hover {
+  border-color: red !important;
+  background-color: white !important;
+  color: red !important;
+}
+
+/* *** ICON REMOVE FROM LIST OF FAVORITE MEDICINAL PLANTS *** */
+.plant-icon {
+  background-image: url(../images/plant.png); /*https://www.flaticon.com/free-icon/plant_1892729*/
+  background-size: contain;
+  background-position: left;
+  background-repeat: no-repeat;
+  padding-right: 40px;
+}
+
+/* *** BUTTON ADD FAVOURITE MEDICAL PLANT *** */
+.icon-add-favourite:hover {
+  border-color: limegreen !important;
+  background-color: white !important;
+  color: limegreen !important;
+}
+
+/* *** ICON ADD TO LIST OF FAVORITE MEDICINAL PLANTS *** */
+.holding-plant-icon {
+  background-image: url(../images/holding-hand.png); /*https://www.flaticon.com/free-icon/holding-hand_2975922*/
+  background-size: contain;
+  background-position: left;
+  background-repeat: no-repeat;
+  padding-right: 40px;
+}
+
+/* START *** MEDICINAL PLANT'S CATEGORIES *** */
+.disease-items {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+
+.disease-items li {
+  width: 50%;
+}
+
+.disease-items li:first-child {
+  margin-top: 5px;
+}
+
+.disease-items li:last-child {
+  margin-bottom: 20px;
+}
+
+.working-area-items li {
+  width: 100%;
+}
+/* END *** MEDICINAL PLANT'S CATEGORIES *** */
+
+/* START *** SIMILAR PLANT *** */
+.similar-plant .card {
+  margin: 0;
+}
+
+.similar-plant-card a:hover {
+  font-weight: bold;
+}
+
+.similar-plant-title {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-content: center;
+}
+
+.similar-plant-title a {
+  background-color: white;
+  color: black;
+}
+
+.similar-plant-title a:hover {
+  background-color: white;
+}
+/* END *** SIMILAR PLANT *** */
+/* END ### medicinal-plant.jsp #########################################################################*/
+
+
+/* START ### navigation.jsp ##########################################################################*/
+/* START *** HERBALAND LOGO *** */
+.herbaLandDiv {
+  margin: 8px 0 0 0;
+  color: darkgreen;
+}
+
+.herbaLandDiv a {
+  color: inherit;
+}
+
+.herbaLandTxt {
+  font-weight: bold;
+  font-family: 'Fleur De Leah', cursive;
+  font-size: 6vmin;
+}
+/* END *** HERBALAND LOGO *** */
+
+/* *** ICON IN THE "Ulubione zioła" BUTTON *** */
+.favourite-plants-icon {
+  background-image: url(../images/growing.png); /*https://www.flaticon.com/free-icon/growing_5500820*/
+  background-size: contain;
+  background-position: left;
+  background-repeat: no-repeat;
+  padding-right: 20px;
+}
+
+/* *** ICON AFTER ADDED NEW MEDICINAL PLANT IN TO FAVOURITE LIST IN "Ulubione zioła" BUTTON *** */
+.new-favourite-icon {
+  background-image: url(../images/new-favourite.png); /*https://www.flaticon.com/free-icon/medicine_1839820*/
+  background-size: contain;
+  background-position: left;
+  background-repeat: no-repeat;
+  padding-right: 20px;
+}
+/* END ### navigation.jsp ############################################################################*/
+
+
+/* START ### searched.jsp ############################################################################*/
+.catalog-item .btn-icon {
+  padding: 20px;
+  z-index: 1;
+  float: inline-end;
+  margin: 10px 10px 0 0;
+  background-color: gainsboro;
+}
+/* END ### searched.jsp ##############################################################################*/
+
+
+/* START ### pagination.jsp ##########################################################################*/
+.paging-links li a {
+  border-radius: 5px;
+}
+/* END ### pagination.jsp ############################################################################*/
+
+
+/* START ### form-medicinal-plant.jsp ################################################################*/
+.plant-spec-items .row {
+  align-items: center;
+  margin: 0 auto;
+}
+
+.plant-spec-items h4 {
+  font-size: 17px;
+  font-weight: 700;
+  margin-top: 10px;
+}
+
+/* START *** CHOOSE CATEGORIES SECTION *** */
+.sec-checkboxes {
+  margin-top: 10px;
+  display: none;
+  justify-content: space-between;
+}
+
+#plantCategories * {
+  border: none;
+  list-style-type: none;
+  align-self: normal;
+}
+
+.btn-add-category {
+  max-height: 8vh;
+  margin-right: 10px;
+}
+
+select#diseasesGroupSelect {
+  width: 75%;
+  border: solid 2px limegreen;
+  border-radius: 4px;
+}
+
+select#diseasesGroupSelect,
+select.dialog-category-select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  -webkit-user-select: none;
+}
+
+select#diseasesGroupSelect option:checked,
+select.dialog-category-select option:checked {
+  background-color: palegoldenrod;
+}
+
+select#diseasesGroupSelect option:hover,
+select.dialog-category-select option:hover {
+  background-color: #9bd59bc4;
+}
+
+#ulCategory {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding: 0;
+}
+
+ul .list-group-categories > p {
+  background-color: limegreen;
+  border-radius: 4px;
+  margin: 3px;
+  max-width: 80%;
+}
+
+.allWACheckboxesLabel {
+  color: limegreen;
+}
+
+#submitCategoryBtn {
+  margin: 15px;
+  width: 40%;
+}
+/* END *** CHOOSE CATEGORIES SECTION *** */
+
+/* START *** CARD WITH ADDED CATEGORIES *** */
+.card {
+  margin: 10px;
+}
+
+.card-header {
+  background-color: darkseagreen;
+  text-align: center;
+  font-size: larger;
+}
+
+.card-body .btn {
+  margin: 10px;
+}
+
+.card-text {
+  margin-left: 5px;
+  background-color: khaki;
+  border-radius: 10px 5%;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+/* END *** CARD WITH ADDED CATEGORIES *** */
+/* END ### form-medicinal-plant.jsp ##################################################################*/
+
+
+/* START ### new-category-dialog.jsp #################################################################*/
+.btn-new-category-dialog {
+  font-size: 13px;
+}
+
+.working-area-div {
+  margin-button: 10px;
+}
+
+.dialogue-annotation {
+  margin: 20px;
+}
+
+.dialogue-annotation p {
+  color: red;
+}
+
+.dialog-category-select {
+  width: 100%;
+}
+
+.working-area-select-div {
+  margin-right: 25px;
+}
+/* END ### new-category-dialog.jsp ###################################################################*/

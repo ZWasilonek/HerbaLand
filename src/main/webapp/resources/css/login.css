@@ -1,0 +1,60 @@
+/* START ### login.jsp, register.jsp #################################################################*/
+body {
+  /* Source background-image url: https://www.freepik.com/free-photo/top-view-plant-with-special-properties-assortment_11741682.htm#query=medicinal%20herbs&position=14&from_view=keyword */
+  background-image: url(../images/login_register_background.jpg);
+  background-size: cover;
+  background-position: center right;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+header {
+  background-color: white;
+}
+
+.login-content {
+  float: right;
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+.login-page form {
+  margin: auto 10% auto auto;
+  padding: 10px 30px;
+  background: white;
+  opacity: 0.7;
+  border-radius: 3%;
+}
+
+/* *** EVENT TITLE (LOGOWANIE / REJESTRACJA) *** */
+.log-reg-title {
+  font-family: 'Fleur De Leah', cursive;
+  text-align: center;
+  font-size: 40px;
+  font-weight: bold;
+  color: darkgreen;
+}
+/* END ### login.jsp, register.jsp ###################################################################*/
+
+
+/* START ### login.jsp ###############################################################################*/
+/* *** BACKGROUND FOR OUTSIDE LOGIN ICONS *** */
+.btn-link {
+  background-color: beige;
+}
+
+.login-error {
+  color: red;
+  text-align: center;
+}
+/* END ### login.jsp #################################################################################*/
+
+
+/* START ### register.jsp ############################################################################*/
+/* *** STYLE FOR REGISTER VALIDATION TEXT ERROR *** */
+.error {
+  color: red;
+  font-size: 13px;
+  margin: 0;
+}
+/* END ### register.jsp ##############################################################################*/
