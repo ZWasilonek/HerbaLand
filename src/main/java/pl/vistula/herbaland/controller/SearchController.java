@@ -37,7 +37,7 @@ public class SearchController {
   /* START ### MODELS ###############################################################*/
   @ModelAttribute("homeVideo")
   public MultiTypeFileDTO initHomeVideoModel() {
-    return facadeMultiTypeFileService.loadHomeFiles().stream().findFirst().get();
+    return facadeMultiTypeFileService.loadHomeFiles().stream().findFirst().orElse(new MultiTypeFileDTO());
   }
 
   @ModelAttribute("allCategories")
@@ -72,7 +72,7 @@ public class SearchController {
             ("endpointParams", "&searchParam=" + searchParam);
       }
     }
-    redirectAttrs.addFlashAttribute("searchStatus", searchStatus);
+    redirectAttrs.addFlashAttribute("searchParamStatus", searchStatus);
     redirectAttrs.addFlashAttribute("searchWord", searchParam);
     return "redirect:" + referer;
   }
@@ -95,7 +95,7 @@ public class SearchController {
         medicinalPlantsPage = facadeMedicinalPlantService.getAllMedicinalPlantsByCategory(
             categoryName, page, size);
       }
-      searchStatus = "SUCCESS";
+      if (medicinalPlantsPage != null && medicinalPlantsPage.getTotalElements() > 0) searchStatus = "SUCCESS";
     }
     model.addAttribute("medicinalPlantByCategoryPage", medicinalPlantsPage);
     model.addAttribute("categoryName", categoryName);

@@ -1,7 +1,7 @@
 /* START ### user-medicinal-plant.jsp ##################################################################*/
 body {
   /* SOURCE: https://www.freepik.com/free-photo/green-fresh-spinach-leaves-neutral-gray_14443246.htm#page=55&query=zio%C5%82a%20lecznicze&position=30&from_view=search&track=ais&uuid=a6c2f628-5855-4421-ab7a-0e8a4a272346 */
-  background-image: url(../images/user-medicinal-plants-background.jpg);
+  background-image: url(/resources/images/user-medicinal-plants-background.jpg);
   background-size: cover;
   background-position: center right;
   background-repeat: no-repeat;
@@ -16,6 +16,11 @@ body {
   align-content: space-between;
   align-items: center;
   margin: 50px 80px;
+}
+
+/* *** MEDICAL PLANTS PAGING BG *** */
+#userMedicinalPlants .paging-link {
+  background-color: darkseagreen;
 }
 
 /* *** MEDICAL PLANT CARD *** */
@@ -37,7 +42,7 @@ body {
 
 /* *** TEXT NUMBER OD MEDICAL PLANTS FOUND *** */
 .user-herbs-search-info {
-  background-color: #ffffffb8;
+  background-color: white;
   border-radius: 5px;
   margin: 10px;
   padding: 10px;
@@ -46,7 +51,7 @@ body {
 
 /* *** BACKGROUND FOR MEDICAL PLANTS LIST *** */
 #userMedicinalPlants .catalog-item-list {
-  background-color: #ffffffad;
+  background-color: #ffffffc9;
   border-radius: 5px;
 }
 /* END ### user-medicinal-plant.jsp ####################################################################*/

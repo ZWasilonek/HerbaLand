@@ -151,10 +151,6 @@ body {
 
 /* START --- index.jsp HERBS CONTENT ---------------------------------------------------------------- */
 /* START *** index.jsp HERBS LIST BY CATEGORIES *** */
-.content-container {
-  max-width: 1422px;
-}
-
 .plant-list-title {
   font-family: 'Fleur De Leah', cursive;
   font-size: 55px;

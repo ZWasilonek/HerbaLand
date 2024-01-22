@@ -35,6 +35,11 @@ header {
   background-color: darkolivegreen;
   color: white;
 }
+
+.bg-darkseagreen:focus {
+  background-color: darkseagreen;
+  color: darkgreen;
+}
 /* END *** BUTTONS, LINKS *** */
 
 /* *** navigation.jsp, user-medicinal-plants.jsp MEDICINAL PLANTS CARD BG *** */
@@ -45,14 +50,14 @@ header {
 /* START *** searched.jsp, user-medicinal-plants.jsp, index.jsp
 ICONS REMOVE / ADD TO FAVORITES LIST OF MEDICINAL PLANTS *** */
 .catalog-item .leaves-heart-icon {
-  background-image: url(../images/leaves-heart.png); /*https://www.flaticon.com/free-icon/love_6503728*/
+  background-image: url(/resources/images/leaves-heart.png); /*https://www.flaticon.com/free-icon/love_6503728*/
   background-size: contain;
   background-position: left;
   background-repeat: no-repeat;
 }
 
 .catalog-item .heart-minus-icon {
-  background-image: url(../images/heart-minus.png); /*https://www.flaticon.com/free-icon/heart_6774211*/
+  background-image: url(/resources/images/heart-minus.png); /*https://www.flaticon.com/free-icon/heart_6774211*/
   background-size: contain;
   background-position: left;
   background-repeat: no-repeat;
@@ -83,7 +88,7 @@ ICONS REMOVE / ADD TO FAVORITES LIST OF MEDICINAL PLANTS *** */
 
 /* *** ICON REMOVE FROM LIST OF FAVORITE MEDICINAL PLANTS *** */
 .plant-icon {
-  background-image: url(../images/plant.png); /*https://www.flaticon.com/free-icon/plant_1892729*/
+  background-image: url(/resources/images/plant.png); /*https://www.flaticon.com/free-icon/plant_1892729*/
   background-size: contain;
   background-position: left;
   background-repeat: no-repeat;
@@ -99,7 +104,7 @@ ICONS REMOVE / ADD TO FAVORITES LIST OF MEDICINAL PLANTS *** */
 
 /* *** ICON ADD TO LIST OF FAVORITE MEDICINAL PLANTS *** */
 .holding-plant-icon {
-  background-image: url(../images/holding-hand.png); /*https://www.flaticon.com/free-icon/holding-hand_2975922*/
+  background-image: url(/resources/images/holding-hand.png); /*https://www.flaticon.com/free-icon/holding-hand_2975922*/
   background-size: contain;
   background-position: left;
   background-repeat: no-repeat;
@@ -161,7 +166,7 @@ ICONS REMOVE / ADD TO FAVORITES LIST OF MEDICINAL PLANTS *** */
 /* START ### navigation.jsp ##########################################################################*/
 /* START *** HERBALAND LOGO *** */
 .herbaLandDiv {
-  margin: 8px 0 0 0;
+  margin: 10px 0 0 0;
   color: darkgreen;
 }
 
@@ -172,13 +177,13 @@ ICONS REMOVE / ADD TO FAVORITES LIST OF MEDICINAL PLANTS *** */
 .herbaLandTxt {
   font-weight: bold;
   font-family: 'Fleur De Leah', cursive;
-  font-size: 6vmin;
+  font-size: 35px;
 }
 /* END *** HERBALAND LOGO *** */
 
 /* *** ICON IN THE "Ulubione zioła" BUTTON *** */
 .favourite-plants-icon {
-  background-image: url(../images/growing.png); /*https://www.flaticon.com/free-icon/growing_5500820*/
+  background-image: url(/resources/images/growing.png); /*https://www.flaticon.com/free-icon/growing_5500820*/
   background-size: contain;
   background-position: left;
   background-repeat: no-repeat;
@@ -187,7 +192,7 @@ ICONS REMOVE / ADD TO FAVORITES LIST OF MEDICINAL PLANTS *** */
 
 /* *** ICON AFTER ADDED NEW MEDICINAL PLANT IN TO FAVOURITE LIST IN "Ulubione zioła" BUTTON *** */
 .new-favourite-icon {
-  background-image: url(../images/new-favourite.png); /*https://www.flaticon.com/free-icon/medicine_1839820*/
+  background-image: url(/resources/images/new-favourite.png); /*https://www.flaticon.com/free-icon/medicine_1839820*/
   background-size: contain;
   background-position: left;
   background-repeat: no-repeat;
@@ -224,6 +229,11 @@ ICONS REMOVE / ADD TO FAVORITES LIST OF MEDICINAL PLANTS *** */
   font-size: 17px;
   font-weight: 700;
   margin-top: 10px;
+}
+
+#addCategoryLink:hover {
+  background: darkseagreen;
+  color: white;
 }
 
 /* START *** CHOOSE CATEGORIES SECTION *** */

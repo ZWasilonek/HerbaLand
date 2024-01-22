@@ -12,5 +12,5 @@
 <!-- MDB -->
 <link rel="stylesheet" href="<c:url value="/resources/css/mdb.min.css"/>" type="text/css"/>
 <!-- Custom styles -->
-<link rel="stylesheet" href="<c:url value="/resources/css/style.css"/>" type="text/css"/>
-<link rel="stylesheet" href="<c:url value="/resources/css/index.css"/>" type="text/css"/>
+<link rel="stylesheet" href="<c:url value="/resources/css/custom/style.css"/>" type="text/css"/>
+<link rel="stylesheet" href="<c:url value="/resources/css/custom/index.css"/>" type="text/css"/>

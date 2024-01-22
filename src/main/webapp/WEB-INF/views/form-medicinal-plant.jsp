@@ -9,7 +9,7 @@
 <html lang="pl">
   <head>
     <jsp:include page="/WEB-INF/views/fragment/head.jsp"/>
-    <title>Formularz edycji zioła</title>
+    <title>Formularz edycji rośliny</title>
   </head>
 
   <body onload="initCategoryArr(<c:out value="${plantCategoriesJSON}"/>,<c:out value="${allCategoriesJSON}"/>)">
@@ -43,17 +43,19 @@
               <!-- END medicinal plant picture -->
 
               <div class="d-flex flex-wrap col-lg-6 col-md-5 col-sm-12">
-                <!-- START Button Back -->
-                <div class="col-12 d-flex justify-content-end align-items-start">
-                  <a class="btn bg-darkseagreen" role="button"
-                     href="<c:url value="${contextPath}/medicinal-plant/${medicinalPlant.id}"/>">
-                     COFNIJ
-                  </a>
-                </div>
-                <!-- END Button Back -->
+                <c:if test="${editMode}">
+                  <!-- START Button Back -->
+                  <div class="col-12 d-flex justify-content-end align-items-start">
+                    <a class="btn bg-darkseagreen" role="button"
+                       href="<c:url value="${contextPath}/medicinal-plant/${medicinalPlant.id}"/>">
+                       COFNIJ
+                    </a>
+                  </div>
+                  <!-- END Button Back -->
+                </c:if>
 
                 <!-- START Send file -->
-                <div class="col-12 ps-4">
+                <div class="col-12 ps-4 ${editMode ? 'align-self-start' : 'align-self-center'}">
                   <label for="medicinalPlantFile" class="form-label">Wybierz zdjęcie:</label>
                   <form:input class="form-control" path="file" type="file" id="medicinalPlantFile" />
                   <form:input type="hidden" path="file.id" />
@@ -118,7 +120,7 @@
                         </c:forEach>
                         <!-- NEW CATEGORY DIALOG BUTTON -->
                         <li class="nav-item d-flex" role="presentation">
-                          <a onclick="getClearedDialogCategory()"
+                          <a id="addCategoryLink" onclick="getClearedDialogCategory()"
                             class="nav-link d-flex align-items-center justify-content-center w-100"
                             data-mdb-toggle="modal"
                             data-mdb-target="#addNewCategoryDialog">

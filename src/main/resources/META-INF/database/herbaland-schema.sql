@@ -71,7 +71,7 @@ create table `medicinal_plants` (
     REFERENCES files(id)
 );
 
-create table categories (
+create table `categories` (
 	id INT NOT NULL AUTO_INCREMENT,
   name NVARCHAR(100) NOT NULL UNIQUE,
 
@@ -102,7 +102,7 @@ create table `disease_working_areas` (
 		REFERENCES diseases(id) ON DELETE CASCADE
 );
 
-create table diseases_categories (
+create table `diseases_categories` (
   category_id INT NOT NULL,
   disease_id INT NOT NULL,
 
@@ -112,7 +112,7 @@ create table diseases_categories (
     REFERENCES diseases(id) ON DELETE CASCADE
 );
 
-create table plants_categories (
+create table `plants_categories` (
   id INT NOT NULL AUTO_INCREMENT,
   medicinal_plant_id INT NOT NULL,
   category_id INT NOT NULL,

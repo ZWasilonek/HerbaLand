@@ -2,7 +2,7 @@
 
 <footer>
   <div class="container-fluid position-relative">
-    <div id="content" class="content-container">
+    <div id="content">
       <!-- ------------- Subscribe form and footer links ------------- -->
       <div class="row mt-5 pt-3">
         <div class="col-xl-6 col-lg-12 mb-4">

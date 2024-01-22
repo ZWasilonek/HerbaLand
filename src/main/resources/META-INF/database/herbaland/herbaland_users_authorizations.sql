@@ -16,31 +16,30 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `users_plants`
+-- Table structure for table `users_authorizations`
 --
 
-DROP TABLE IF EXISTS `users_plants`;
+DROP TABLE IF EXISTS `users_authorizations`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `users_plants` (
-  `id` int NOT NULL AUTO_INCREMENT,
+CREATE TABLE `users_authorizations` (
   `user_id` int NOT NULL,
-  `medicinal_plant_id` int NOT NULL,
-  PRIMARY KEY (`id`),
+  `authorization_id` int NOT NULL,
   KEY `user_id` (`user_id`),
-  KEY `medicinal_plant_id` (`medicinal_plant_id`),
-  CONSTRAINT `users_plants_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE,
-  CONSTRAINT `users_plants_ibfk_2` FOREIGN KEY (`medicinal_plant_id`) REFERENCES `medicinal_plants` (`id`) ON DELETE CASCADE
+  KEY `authorization_id` (`authorization_id`),
+  CONSTRAINT `users_authorizations_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE,
+  CONSTRAINT `users_authorizations_ibfk_2` FOREIGN KEY (`authorization_id`) REFERENCES `authorizations` (`id`) ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `users_plants`
+-- Dumping data for table `users_authorizations`
 --
 
-LOCK TABLES `users_plants` WRITE;
-/*!40000 ALTER TABLE `users_plants` DISABLE KEYS */;
-/*!40000 ALTER TABLE `users_plants` ENABLE KEYS */;
+LOCK TABLES `users_authorizations` WRITE;
+/*!40000 ALTER TABLE `users_authorizations` DISABLE KEYS */;
+INSERT INTO `users_authorizations` VALUES (1,1),(1,2),(2,2),(3,2);
+/*!40000 ALTER TABLE `users_authorizations` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -52,4 +51,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-01-03 13:58:39
+-- Dump completed on 2024-01-20 13:00:02

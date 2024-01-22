@@ -53,9 +53,12 @@ public class FacadeMedicinalPlantServiceImpl extends GenericServiceFacadeImpl<Me
   @Override
   public Page<MedicinalPlantDTO> getAllMedicinalPlantsByCategory(String categoryName, int pageNo, int limit) {
     CategoryDTO foundCategory = facadeCategoryService.getByName(categoryName);
-    List<MedicinalPlantDTO> foundMedicinalPlants = new ArrayList<>(mapper.mapEntitiesToDTOs(
-        plantCategoryService.getAllMedicinalPlantsByCategoryId(foundCategory.getId())));
-    return convertObjectsToPage(foundMedicinalPlants, pageNo, limit);
+    if (foundCategory != null) {
+      List<MedicinalPlantDTO> foundMedicinalPlants = new ArrayList<>(mapper.mapEntitiesToDTOs(
+          plantCategoryService.getAllMedicinalPlantsByCategoryId(foundCategory.getId())));
+      return convertObjectsToPage(foundMedicinalPlants, pageNo, limit);
+    }
+    return null;
   }
 
   @Override

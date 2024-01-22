@@ -1,6 +1,7 @@
 package pl.vistula.herbaland.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -10,8 +11,11 @@ import pl.vistula.herbaland.dto.MedicinalPlantDTO;
 import pl.vistula.herbaland.dto.MultiTypeFileDTO;
 import pl.vistula.herbaland.dto.UserDTO;
 import pl.vistula.herbaland.facade.*;
+import pl.vistula.herbaland.model.MedicinalPlant;
 import pl.vistula.herbaland.validation.RegistrationValidation;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import javax.validation.Valid;
 import java.util.Optional;
 import java.util.Set;
@@ -44,11 +48,6 @@ public class HomeController extends SessionController {
     return lastVideo.orElseGet(MultiTypeFileDTO::new);
   }
 
-  @ModelAttribute("medicinalPlants")
-  public Set<MedicinalPlantDTO> initAllMedicinalPlantsModel() {
-    return facadeMedicinalPlantService.findAll();
-  }
-
   @ModelAttribute("allCategories")
   public Set<CategoryDTO> initAllCategoriesModel() {
     return facadeCategoryService.findAll();
@@ -62,7 +61,13 @@ public class HomeController extends SessionController {
                                 @RequestParam(name = "page", defaultValue = "0") int page,
                                 @RequestParam(name = "size", defaultValue = "8") int size) {
     setUserFromSession(model, true);
-    model.addAttribute("medicinalPlantByCategoryPage", facadeMedicinalPlantService.findAll(page, size));
+    String searchStatus = "NOT_FOUND";
+
+    Page<MedicinalPlantDTO> foundMedicinalPlants = facadeMedicinalPlantService.findAll(page, size);
+    if (foundMedicinalPlants != null && foundMedicinalPlants.getTotalElements() > 0) searchStatus = "SUCCESS";
+
+    model.addAttribute("medicinalPlantByCategoryPage", foundMedicinalPlants);
+    model.addAttribute("searchStatus", searchStatus);
     return "index";
   }
   /* END ### index.jsp ##############################################################*/
@@ -93,5 +98,15 @@ public class HomeController extends SessionController {
     return "login";
   }
   /* END ### login.jsp ##############################################################*/
+
+
+  /* START ### error.jsp ############################################################*/
+  @GetMapping("/403")
+  public String displayError(Model model) {
+    setUserFromSession(model, true);
+    model.addAttribute("status", 403);
+    return "error";
+  }
+  /* END ### error.jsp ##############################################################*/
 
 }

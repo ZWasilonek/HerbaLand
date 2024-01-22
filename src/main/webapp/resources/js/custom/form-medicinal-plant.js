@@ -9,7 +9,6 @@ var diseasesArr = new Array();
 var workingAreasArr = new Array();
 var allDiseases = new Array();
 var allWorkingAreas = new Array();
-const LOCALHOST_URL = "http://localhost:8080/";
 
 const newDiseaseInputClassName = 'disease-input';
 const newDiseaseDivClassName = 'new-disease-div';

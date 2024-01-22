@@ -16,31 +16,32 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `users`
+-- Table structure for table `users_plants`
 --
 
-DROP TABLE IF EXISTS `users`;
+DROP TABLE IF EXISTS `users_plants`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `users` (
+CREATE TABLE `users_plants` (
   `id` int NOT NULL AUTO_INCREMENT,
-  `email` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
-  `first_name` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
-  `last_name` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
-  `password` varchar(200) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
-  `is_enabled` bit(1) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+  `user_id` int NOT NULL,
+  `medicinal_plant_id` int NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `user_id` (`user_id`),
+  KEY `medicinal_plant_id` (`medicinal_plant_id`),
+  CONSTRAINT `users_plants_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE,
+  CONSTRAINT `users_plants_ibfk_2` FOREIGN KEY (`medicinal_plant_id`) REFERENCES `medicinal_plants` (`id`) ON DELETE CASCADE
+) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `users`
+-- Dumping data for table `users_plants`
 --
 
-LOCK TABLES `users` WRITE;
-/*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (1,'admin@gmail.com','ZOFIA','WASILONEK','$2a$10$1FchTNOoF6gS9v.s7GkNmujcqscQkMvSkWgi3..vEv9Z9l3X49BNq',_binary ''),(2,'jan@o2.pl','JAN','KOWALSKI','$2a$10$wtD.roO8R7Cs.X/IRAdnmOfZ6epe1nUmzkHDxZurH4q4DFadAQSOy',_binary '');
-/*!40000 ALTER TABLE `users` ENABLE KEYS */;
+LOCK TABLES `users_plants` WRITE;
+/*!40000 ALTER TABLE `users_plants` DISABLE KEYS */;
+INSERT INTO `users_plants` VALUES (3,2,1),(4,2,5),(5,2,4),(6,2,7),(7,2,8);
+/*!40000 ALTER TABLE `users_plants` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -52,4 +53,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-01-03 13:58:37
+-- Dump completed on 2024-01-20 13:00:03

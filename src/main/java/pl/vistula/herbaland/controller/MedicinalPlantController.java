@@ -137,7 +137,6 @@ public class MedicinalPlantController extends SessionController {
   @PostMapping(value = "/send-plant-categories", consumes = "application/json")
   public String addCategoriesToThePlant(@RequestBody Set<CategoryDTO> categories, Model model) {
     if (categories != null && !categories.isEmpty()) {
-      facadePlantCategoryService.saveSelectedPlantCategories(getMedicinalPlantModel().getId(), categories);
       setSelectedPlantCategoriesModel(model, categories);
     }
     return "form-medicinal-plant";
@@ -158,6 +157,7 @@ public class MedicinalPlantController extends SessionController {
     setUserFromSession(model, true);
     setMedicinalPlantModel(model, new MedicinalPlantDTO());
     model.addAttribute("plantCategoriesJSON", "[]");
+    model.addAttribute("editMode", false);
     return "form-medicinal-plant";
   }
 
@@ -170,6 +170,9 @@ public class MedicinalPlantController extends SessionController {
     if (file != null && !file.isEmpty()) {
       Integer createdId = facadeMedicinalPlantService.getCreatedMedicinalPlantId(medicinalPlant, file);
       if (createdId != null) {
+        if (!selectedPlantCategories.isEmpty()) {
+          facadePlantCategoryService.saveSelectedPlantCategories(createdId, selectedPlantCategories);
+        }
         redirectAttrs.addFlashAttribute("message", "Zapisano nową roślinę");
         resultView = "redirect:/medicinal-plant/" + createdId;
       }
@@ -190,6 +193,7 @@ public class MedicinalPlantController extends SessionController {
     }
     setUserFromSession(model, true);
     setSelectedPlantCategoriesModel(model, selectedPlantCategories);
+    model.addAttribute("editMode", true);
     return "form-medicinal-plant";
   }
 
@@ -200,6 +204,9 @@ public class MedicinalPlantController extends SessionController {
                                          RedirectAttributes redirectAttrs) {
     MedicinalPlantDTO updated = facadeMedicinalPlantService.updateMedicinalPlant(medicinalPlant, file);
     if (updated != null) {
+      if (!selectedPlantCategories.isEmpty()) {
+        facadePlantCategoryService.saveSelectedPlantCategories(updated.getId(), selectedPlantCategories);
+      }
       redirectAttrs.addFlashAttribute("message", "Dane zostały zaktualizowane");
     }
     return "redirect:/medicinal-plant/" + medicinalPlant.getId();

@@ -3,10 +3,26 @@
 
 <!DOCTYPE HTML>
 <html lang="pl">
-  <body>
+  <head>
+    <jsp:include page="/WEB-INF/views/fragment/head.jsp"/>
+    <title>Error</title>
+  </head>
+
+  <body class="bg-light">
+    <jsp:include page="/WEB-INF/views/fragment/navigation.jsp"/>
+
     <div class="container">
-      <div class="starter-template">
-        <h1>403 - Odmowa dostępu</h1>
+      <div class="text-center mt-5 starter-template">
+        <c:choose>
+          <c:when test="${status != null}">
+            <h1>HTTP Status ${status}</h1>
+          </c:when>
+
+          <c:otherwise>
+            <h1>403 - Odmowa dostępu</h1>
+          </c:otherwise>
+        </c:choose>
+
         <div>Witaj
         <c:choose>
           <c:when test="${userFromSession != null && userFromSession.firstName != ''}">
@@ -20,5 +36,7 @@
         , nie masz zgody na dostęp do tej strony.</div>
       </div>
     </div>
+
+    <jsp:include page="/WEB-INF/views/fragment/java-scripts.jsp"/>
   </body>
 </html>

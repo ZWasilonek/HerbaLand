@@ -4,14 +4,14 @@
 
 <div class="border-bottom bg-light">
   <div class="container-fluid p-3">
-    <div id="searchContent" class="content-container">
+    <div id="searchContent">
       <div class="row catalog-item-list">
 
-        <c:if test="${searchStatus eq 'NOT_FOUND'}">
+        <c:if test="${searchParamStatus eq 'NOT_FOUND'}">
           <p>Nie znaleziono wyniku dla szukanej frazy: <strong><c:out value="${searchWord}"/></strong></p>
         </c:if>
 
-        <c:if test="${searchStatus eq 'SUCCESS'}">
+        <c:if test="${searchParamStatus eq 'SUCCESS' and searchedMedicinalPlants.size() > 0}">
           <p>Znaleziono dopasowań: <strong><c:out value="${searchedMedicinalPlants.size()}" /></strong> dla szukanej frazy: <strong><c:out value="${searchWord}"/></strong></p>
 
           <c:forEach var="medicinalPlant" items="${searchedMedicinalPlants}" varStatus="status">

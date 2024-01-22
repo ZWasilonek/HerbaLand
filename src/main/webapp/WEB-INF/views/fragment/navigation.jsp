@@ -102,6 +102,6 @@
 <!-- Jumbotron -->
 
 <!-- Searched medical plants by param -->
-<c:if test="${searchStatus != null}">
+<c:if test="${searchParamStatus != null}">
   <jsp:include page="/WEB-INF/views/fragment/searched.jsp"/>
 </c:if>

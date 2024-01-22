@@ -8,15 +8,15 @@
 <html lang="pl">
   <head>
     <jsp:include page="/WEB-INF/views/fragment/head.jsp"/>
-    <link rel="stylesheet" href="<c:url value="/resources/css/login.css"/>" type="text/css"/>
+    <link rel="stylesheet" href="<c:url value="/resources/css/custom/login.css"/>" type="text/css"/>
     <title>Rejestracja</title>
   </head>
 
   <body>
     <jsp:include page="/WEB-INF/views/fragment/navigation.jsp"/>
 
-    <section class="login-page">
-      <div class="login-content col-md-7 col-lg-5 col-xl-5 offset-xl-1">
+    <section class="login-page d-flex justify-content-end align-items-center">
+      <div class="col-lg-7 col-md-7 col-sm-12 col-xl-6 offset-xl-1 d-flex justify-content-center my-5">
         <form:form modelAttribute="registeredUser" method="post" accept-charset="UTF-8">
           <p class="log-reg-title">Rejestracja</p>
 
